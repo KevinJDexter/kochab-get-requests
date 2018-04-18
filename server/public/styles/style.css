@@ -1,0 +1,10 @@
+body {
+  /* background-color: magenta; */
+  /* background: linear-gradient(to bottom right,#01acf1,#b4218e,#182a99,#5ebbb4,#93d86d,#8133c5,#79a80a,#9ce363,#b7c077,#db0e4d,#76f57e,#566c9d,#babb31,#dc4e92,#b5306b,#1a2d32,#b1acd9,#d3fab3,#d2abaa,#8a968b,#c86be9,#5e9f54,#aab329,#e7f1cc,#461587,#8f9ad9,#577462,#a8f519,#b416d2,#196085,#3370a0,#c4dd73,#55b6e7,#152ca6,#7e2950); */
+  background-repeat: no-repeat;
+  background-size: 100% 1200%;
+}
+
+h1 {
+  color: magenta;
+}
