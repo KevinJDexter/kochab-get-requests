@@ -1,14 +1,16 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = 5000;
-const quotes_data = require('./all-quotes');
-
-//   app.get('/', (req, res) => {
-// res.send('Happy Wednesday');
-// });
+const quotes_data = require('./modules/all-quotes');
 
 app.use(express.static('server/public'));
+app.use(bodyParser.urlencoded({extended:true}));
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 app.get('/all-quotes', (req, res) => {
   res.send(quotes_data);
@@ -17,8 +19,9 @@ app.get('/all-quotes', (req, res) => {
 app.get('/quote', (req, res) => {
   let randomQuote = quotes_data[Math.floor(Math.random() * quotes_data.length)];
   res.send(randomQuote);
-})
+});
 
-app.listen(PORT, () => {
-  console.log('WOO BOI!!!');
+app.post('/add-quote', (req, res) => {
+  quotes_data.push(req.body);
+  res.send(200);
 });
