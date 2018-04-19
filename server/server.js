@@ -23,5 +23,5 @@ app.get('/quote', (req, res) => {
 
 app.post('/add-quote', (req, res) => {
   quotes_data.push(req.body);
-  res.send(200);
+  res.sendStatus(200);
 });
